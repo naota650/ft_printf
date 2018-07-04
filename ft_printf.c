@@ -6,10 +6,11 @@
 /*   By: lmartine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 16:38:53 by lmartine          #+#    #+#             */
-/*   Updated: 2018/07/03 18:49:13 by lmartine         ###   ########.fr       */
+/*   Updated: 2018/07/03 18:50:32 by lmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <wchar.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
