@@ -6,7 +6,7 @@
 /*   By: lmartine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 20:04:47 by lmartine          #+#    #+#             */
-/*   Updated: 2018/07/03 20:04:52 by lmartine         ###   ########.fr       */
+/*   Updated: 2018/07/03 20:27:59 by lmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char			*ft_spaces(char *s, t_variable *var);
 char			*ft_chop(char *s, t_variable *var, int i);
 void			ft_apply_flags(char *s, t_variable *var);
 void			ft_handle_it(t_variable *var, va_list args);
-void			init_variable(t_variable var);
+void			ft_init_var(t_variable *var);
 char			*ft_mod_cast(va_list args, t_variable *var, int base);
 char			*ft_hex_cast(va_list args, t_variable *var, int base);
 void			ft_putwstr(wchar_t *ws, t_variable *var, int i);
@@ -58,7 +58,7 @@ int				ft_conv_check(int i, char *s, char c, t_variable *var);
 void			ft_mod_check(char *s, int *i, t_variable *var);
 void			ft_flag_save(char *s, t_variable *var, int *i);
 void			ft_prec_width_parse(char *s, int *i, t_variable *var, va_list args);
-int				parse_variable(char *s, int *i, t_variable *var, va_list args);
+int				ft_parse(char *s, int *i, t_variable *var, va_list args);
 void			ft_putchar(char c, t_variable *var);
 void			ft_putstr(char *s, t_variable *var, int i);
 char			*ft_strrev(char *str, int i, int length);
