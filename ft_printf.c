@@ -6,7 +6,7 @@
 /*   By: lmartine <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 16:38:53 by lmartine          #+#    #+#             */
-/*   Updated: 2018/07/03 18:54:00 by lmartine         ###   ########.fr       */
+/*   Updated: 2018/07/03 18:55:29 by lmartine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
+#include <inttypes.h>
 
 typedef struct	s_variable
 {
