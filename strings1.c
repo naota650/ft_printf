@@ -1,13 +1,13 @@
 #include "ft_printf.h"
 #include <limits.h>
 
-void	ft_putchar(char c, t_ops *ops)
+void	ft_putchar(char c, t_varable *var)
 {
 	write(1, &c, 1);
-	ops->bytes += 1;
+	var->bytes += 1;
 }
 
-void	ft_putstr(char *s, t_ops *ops, int i)
+void	ft_putstr(char *s, t_variable *var, int i)
 {
 	if (!s)
 	{
@@ -17,7 +17,7 @@ void	ft_putstr(char *s, t_ops *ops, int i)
 	while (s[++i])
 	{
 		write(1, &s[i], 1);
-		ops->bytes += 1;
+		var->bytes += 1;
 	}
 }
 

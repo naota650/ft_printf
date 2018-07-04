@@ -1,12 +1,12 @@
 #include "ft_printf.h"
 
-char	*ft_itoa(int nbr, t_ops *ops, int length, int sign)
+char	*ft_itoa(int nbr, t_variable *var, int length, int sign)
 {
 	char	*str;
 
 	sign = nbr;
-	ops->num += 1;
-	if (nbr == 0 && ops->p)
+	var->num += 1;
+	if (nbr == 0 && var->p)
 		return ("");
 	while (sign /= 10)
 		length++;
@@ -35,17 +35,17 @@ int		get_unumlen(size_t num, int base, int i)
 	return (i);
 }
 
-char	*ft_itoabase_umax(size_t num, int base, t_ops *ops)
+char	*ft_itoabase_umax(size_t num, int base, t_variable *var)
 {
 	char			*str;
 	int				len;
 	char			*basestr;
 
 	basestr = ft_strdup("0123456789abcdef", -1);
-	ops->num += 1;
+	var->num += 1;
 	len = get_unumlen(num, base, 1);
-	num == 0 ? ops->pound = 0 : 0;
-	if (num == 0 && ops->p)
+	num == 0 ? var->pound = 0 : 0;
+	if (num == 0 && var->p)
 		return ("");
 	if (!(str = (char *)malloc(sizeof(*str) * len + 1)))
 		return (NULL);
@@ -54,7 +54,7 @@ char	*ft_itoabase_umax(size_t num, int base, t_ops *ops)
 	while (num /= base)
 		str[--len] = basestr[num % base];
 	len = -1;
-	if (ops->conv == 'X')
+	if (var->conv == 'X')
 		while (str[++len])
 			(str[len] >= 'a' && str[len] <= 'z') ? str[len] -= 32 : 0;
 	free(basestr);

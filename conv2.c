@@ -18,17 +18,17 @@ int		ft_atoi(char *s, int i, int nb, int sign)
 	return (sign * nb);
 }
 
-char	*ft_otoa(unsigned long int number, t_ops *ops)
+char	*ft_otoa(unsigned long int number, t_variable *var)
 {
 	char				*print;
 	unsigned int		i;
 	unsigned long int	x;
 
 	x = number;
-	ops->num += 1;
+	var->num += 1;
 	i = 0;
 	print = (char*)malloc(sizeof(char) * 24);
-	if (number == 0 && !ops->pound && ops->p)
+	if (number == 0 && !var->pound && var->p)
 		return ("");
 	if (number == 0)
 	{
@@ -43,11 +43,11 @@ char	*ft_otoa(unsigned long int number, t_ops *ops)
 	}
 	print[i] = '\0';
 	ft_strrev(print, -1, 0);
-	(x != 0 && ops->pound) ? print = ft_strjoin("0", print) : 0;
+	(x != 0 && var->pound) ? print = ft_strjoin("0", print) : 0;
 	return (print);
 }
 
-char	*ft_ptoa(unsigned long int number, t_ops *ops)
+char	*ft_ptoa(unsigned long int number, t_variable *var)
 {
 	char	*print;
 	int		i;
@@ -56,7 +56,7 @@ char	*ft_ptoa(unsigned long int number, t_ops *ops)
 	print = (char*)malloc(sizeof(char) * 12);
 	if (number == 0)
 		print[i] = '0';
-	while (number && ops->conv == 'p')
+	while (number && var->conv == 'p')
 	{
 		print[i++] = "0123456789abcdef"[number % 16];
 		number /= 16;
