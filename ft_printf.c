@@ -2,28 +2,28 @@
 
 void	ft_printf2(const char *format, va_list args, int i, int *bytes)
 {
-	t_ops		ops;
-	int			x;
+	t_variable		var;
+	int				x;
 
 	x = ft_strlen((char*)format);
 	while (format[++i])
 	{
-		ft_init_ops(&ops);
+		ft_init_var(&var);
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
-			ft_putchar('%', &ops);
+			ft_putchar('%', &var);
 			i += 1;
 		}
 		else if (format[i] == '%')
 		{
-			if (ft_parse((char*)format, &i, &ops, args))
-				ft_handle_it(&ops, args);
+			if (ft_parse((char*)format, &i, &var, args))
+				ft_handle_it(&var, args);
 			else if (format[i])
-				ft_putchar(format[i], &ops);
+				ft_putchar(format[i], &var);
 		}
 		else if (i < x)
-			ft_putchar(format[i], &ops);
-		*bytes += ops.bytes;
+			ft_putchar(format[i], &var);
+		*bytes += var.bytes;
 	}
 }
 

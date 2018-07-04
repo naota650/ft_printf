@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include <limits.h>
 
-void	ft_putchar(char c, t_varable *var)
+void	ft_putchar(char c, t_variable *var)
 {
 	write(1, &c, 1);
 	var->bytes += 1;
